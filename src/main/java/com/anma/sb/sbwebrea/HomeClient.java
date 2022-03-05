@@ -16,7 +16,7 @@ public class HomeClient {
 
     public Mono<String> getHome() {
         return this.client.get()
-                .uri("/home").accept(MediaType.TEXT_HTML)
+                .uri("/home").accept(MediaType.APPLICATION_JSON)
                 .retrieve()
                 .bodyToMono(String.class);
     }

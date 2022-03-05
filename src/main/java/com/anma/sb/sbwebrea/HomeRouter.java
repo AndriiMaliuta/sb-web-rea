@@ -14,10 +14,10 @@ import static org.springframework.web.reactive.function.server.RequestPredicates
 public class HomeRouter {
 
     @Bean
-    public RouterFunction<ServerResponse> handle(HomeHandler homeHandler) {
+    public RouterFunction<ServerResponse> route(HomeHandler homeHandler) {
 
         return RouterFunctions
                 .route(GET("/home")
-                .and(accept(MediaType.TEXT_HTML)), homeHandler::home);
+                    .and(accept(MediaType.APPLICATION_JSON)), homeHandler::home);
     }
 }
